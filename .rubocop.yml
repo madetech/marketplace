@@ -1,0 +1,13 @@
+require: rubocop-rspec
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/VerifiedDoubles:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
