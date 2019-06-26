@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'zeitwerk'
+require 'webmock/rspec'
+require 'environment_variables'
 
 loader = Zeitwerk::Loader.new
 loader.push_dir("#{__dir__}/../lib/")
