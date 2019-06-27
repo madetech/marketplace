@@ -34,7 +34,7 @@
     margin-right: 0 !important;
     margin-left: 0 !important;
     padding: 0 15px;
-    border-radius: 0;
     border-left: 15px solid #53ce55;
+    border-radius: 50px 0 0 0;
     vertical-align: baseline;
 }
