@@ -26,13 +26,13 @@
           <div class="mr-lg-auto">
             <div class="header__logo">
               <a href="#" class="header__logo_link">
-              <div class="header_logo_type--by">
-                <span class="header_logo_type__text">Marketplace</span>
-                <span class="px-3">by</span>
-                <span class="position-relative" style="top: -2px;">
+                <div class="header_logo_type--by">
+                  <span class="header_logo_type__text">Marketplace</span>
+                  <span class="px-3">by</span>
+                  <span class="position-relative" style="top: -2px;">
                   <img alt="Made Tech" itemprop="logo" src="/assets/images/made-tech-logo-colour.png" width="120px">
                 </span>
-              </div>
+                </div>
               </a>
             </div>
           </div>
@@ -40,33 +40,33 @@
       </div>
     </header>
     <main class="container mb-5">
-      <div class="clearfix">
-        <h1>Upcoming...</h1>
-      </div>
-      <div class="card-deck mb-3">
-        <% sessions.each_with_index do |session, index| %>
-          <div class="card">
-            <div class="card-header">
-              <% session[:categories].each do |category| %>
-                <span class="badge badge-pill badge-primary"><%= category %></span>
-              <% end %>
-              <span class="badge badge-pill badge-success"><%= session[:session_type] %></span>
+      <% sessions.each_with_index do |(key, sessions_on_day)| %>
+        <h2 class="mt-5"><%= Date.parse(key).strftime('%A %-d %B') %></h2>
+        <div class="card-deck mb-3">
+          <% sessions_on_day.each_with_index do |session, index| %>
+            <div class="card">
+              <div class="card-header">
+                <% session[:categories].each do |category| %>
+                  <span class="badge badge-pill badge-primary"><%= category %></span>
+                <% end %>
+                <span class="badge badge-pill badge-success"><%= session[:session_type] %></span>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><%= session[:title] %></h5>
+                <p class="card-text">Hosted by <%= session[:host] %>.</p>
+              </div>
+              <div class="card-footer text-muted">
+                <%= session[:location] %> <br/>(<%= session[:start_time] %> - <%= session[:end_time] %>)
+              </div>
             </div>
-            <div class="card-body">
-              <h5 class="card-title"><%= session[:title] %></h5>
-              <p class="card-text">Hosted by <%= session[:host] %>.</p>
-            </div>
-            <div class="card-footer text-muted">
-              <%= session[:location] %> <br/>(<%= session[:start_time] %> - <%= session[:end_time] %>)
-            </div>
-          </div>
-          <% if (index + 1) % 3 == 0 %>
-            </div>
-            <div class="card-deck mb-3">
+            <% if (index + 1) % 3 == 0 %>
+              </div>
+              <div class="card-deck mb-3">
+            <% end %>
           <% end %>
-        <% end %>
-        </div>
-        </main>
+          </div>
+      <% end %>
+    </main>
     <footer class="footer">
       <div class="container">
         <div class="row">

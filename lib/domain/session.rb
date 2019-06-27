@@ -11,9 +11,13 @@ class Domain::Session
     end_time
   ].freeze
 
-  attr_accessor *VISIBLE_FIELDS
+  attr_accessor *VISIBLE_FIELDS, :date
 
   def visible_fields
     VISIBLE_FIELDS
+  end
+
+  def fields
+    VISIBLE_FIELDS + [:date]
   end
 end

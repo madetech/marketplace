@@ -25,6 +25,8 @@ class Gateway::AirtableSessions
 
         with_start_time formatted_start_time
         with_end_time formatted_end_time
+
+        with_date start_time.strftime('%Y-%m-%d')
       end.build
     end
   end

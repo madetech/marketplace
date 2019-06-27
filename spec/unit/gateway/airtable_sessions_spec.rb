@@ -22,7 +22,7 @@ describe Gateway::AirtableSessions do
               "Location": '1st Floor Event Space',
               "Name": 'Another event',
               "Host": 'George',
-              "Time": '2019-06-28T12:45:00.000Z',
+              "Time": '2019-06-27T12:45:00.000Z',
               "Duration": 2700,
               "Categories": %w[Delivery],
               "Session Type": 'Seminar'
@@ -57,12 +57,14 @@ describe Gateway::AirtableSessions do
       expect(session.end_time).to eq('14:30')
       expect(session.location).to eq('1st Floor Event Space')
       expect(session.session_type).to eq('Seminar')
+      expect(session.date).to eq('2019-06-28')
     end
 
     sessions[1].tap do |session|
       expect(session.title).to eq('Another event')
       expect(session.categories).to eq(%w[Delivery])
       expect(session.host).to eq('George')
+      expect(session.date).to eq('2019-06-27')
     end
   end
 end

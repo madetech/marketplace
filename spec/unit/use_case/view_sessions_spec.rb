@@ -3,7 +3,7 @@
 describe UseCase::ViewSessions do
   it 'can display no sessions' do
     response = view_sessions([])
-    expect(response[:sessions]).to eq([])
+    expect(response[:sessions]).to eq({})
   end
 
   def view_sessions(sessions)
@@ -11,12 +11,12 @@ describe UseCase::ViewSessions do
                    .execute({})
   end
 
-  def expect_first_session(title)
-    expect(response.dig(:sessions, 0, title))
+  def expect_first_session(field)
+    expect(response.dig(:sessions, '2019-06-29', 0, field))
   end
 
-  def expect_second_session(title)
-    expect(response.dig(:sessions, 1, title))
+  def expect_second_session(field)
+    expect(response.dig(:sessions, '2019-06-25', 0, field))
   end
 
   def a_session(&block)
@@ -40,6 +40,7 @@ describe UseCase::ViewSessions do
         with_location('London')
         with_start_time('14:00')
         with_end_time('17:00')
+        with_date('2019-06-29')
       end
 
       sessions << a_session do
@@ -49,6 +50,7 @@ describe UseCase::ViewSessions do
         with_location('Manchester')
         with_start_time('14:01')
         with_end_time('17:01')
+        with_date('2019-06-25')
       end
     end
 

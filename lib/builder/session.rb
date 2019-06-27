@@ -13,7 +13,7 @@ class Builder::Session
   end
 
   def build
-    @session.visible_fields.each do |f|
+    @session.fields.each do |f|
       @session.send "#{f}=", instance_variable_get("@#{f}")
     end
     @session
@@ -22,7 +22,7 @@ class Builder::Session
   private
 
   def generate_methods
-    @session.visible_fields.each do |f|
+    @session.fields.each do |f|
       self.class.define_method "with_#{f}" do |v|
         instance_variable_set("@#{f}", v)
         self
