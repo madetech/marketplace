@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
     <link rel="stylesheet" href="/assets/css/madetech-frontend.css">
+    <link rel="stylesheet" href="/assets/css/marketplace.css">
   </head>
 
   <body>
@@ -46,20 +47,21 @@
           <% sessions_on_day.each_with_index do |session, index| %>
             <div class="card">
               <div class="card-header">
+                <span class="badge badge-pill badge-success"><%= session[:session_type] %></span>
                 <% session[:categories].each do |category| %>
                   <span class="badge badge-pill badge-primary"><%= category %></span>
                 <% end %>
-                <span class="badge badge-pill badge-success"><%= session[:session_type] %></span>
+
               </div>
               <div class="card-body">
                 <h5 class="card-title"><%= session[:title] %></h5>
-                <p class="card-text">Hosted by <%= session[:host] %>.</p>
               </div>
               <div class="card-footer text-muted">
-                <%= session[:location] %> <br/>(<%= session[:start_time] %> - <%= session[:end_time] %>)
+                <p class="card-text">Hosted by <%= session[:host] %>.</p>
+                <%= session[:location] %> <br/><%= session[:start_time] %> - <%= session[:end_time] %>
               </div>
             </div>
-            <% if (index + 1) % 3 == 0 %>
+            <% if (index + 1) % 2 == 0 %>
               </div>
               <div class="card-deck mb-3">
             <% end %>

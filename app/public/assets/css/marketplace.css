@@ -1,0 +1,35 @@
+.card, .card-header, .card-footer, .card-body {
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.badge {
+    padding: 0 0.9em;
+    line-height: 1.90;
+}
+
+.badge-success {
+    background-color: #53ce55;
+}
+.badge-primary {
+    background-color: #5553ce;
+}
+
+.card-body > h5 {
+    max-width: 350px;
+}
+
+.card-deck {
+    justify-content: space-between;
+    margin-left: -30px;
+    margin-right: -30px;
+}
+
+.card {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    padding: 15px;
+    border-radius: 0;
+    border-left: 15px solid #53ce55;
+}
