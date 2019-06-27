@@ -43,3 +43,8 @@
     padding-left: 11px;
     border-left: 19px solid #53ce55;
 }
+
+.jumbotron-skinny {
+    padding: 10px 0;
+    border-radius: 0;
+}
