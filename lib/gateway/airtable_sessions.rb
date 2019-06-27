@@ -9,9 +9,12 @@ class Gateway::AirtableSessions
       "v0/#{ENV['AIRTABLE_TABLE']}/Marketplace" \
       "?maxRecords=100&view=#{ENV['AIRTABLE_ALL_VIEW']}")
 
-    response['records'].map do |record|
-      fields = record['fields']
-
+    response['records']
+      .map { |record| record['fields'] }
+      .reject { |f| f['Time'].nil? }
+      .reject { |f| f['Categories'].nil? }
+      .reject { |f| f['Duration'].nil? }
+      .map do |fields|
       start_time = start_time_in_london_timezone(fields['Time'])
       formatted_start_time = format_time(start_time)
       formatted_end_time = format_time(end_time(start_time, fields['Duration']))

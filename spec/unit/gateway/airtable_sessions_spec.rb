@@ -27,6 +27,39 @@ describe Gateway::AirtableSessions do
               "Categories": %w[Delivery],
               "Session Type": 'Seminar'
             }
+          },
+          {
+            "fields": {
+              "Location": '1st Floor Event Space',
+              "Name": 'Another event',
+              "Host": 'George',
+              "Time": '2019-06-27T12:45:00.000Z',
+              "Duration": 2700,
+              "Categories": nil,
+              "Session Type": 'Seminar'
+            }
+          },
+          {
+            "fields": {
+              "Location": '1st Floor Event Space',
+              "Name": 'Another event',
+              "Host": 'George',
+              "Time": '2019-06-27T12:45:00.000Z',
+              "Duration": nil,
+              "Categories": %w[Delivery Lean],
+              "Session Type": 'Seminar'
+            }
+          },
+          {
+            "fields": {
+              "Location": '1st Floor Event Space',
+              "Name": 'Another event',
+              "Host": 'George',
+              "Time": nil,
+              "Duration": 2700,
+              "Categories": %w[Delivery],
+              "Session Type": 'Seminar'
+            }
           }
         ] }
   end
@@ -66,5 +99,10 @@ describe Gateway::AirtableSessions do
       expect(session.host).to eq('George')
       expect(session.date).to eq('2019-06-27')
     end
+  end
+
+  it 'filters out invalid sessions' do
+    sessions = described_class.new.all
+    expect(sessions.length).to eq(2)
   end
 end
