@@ -14,6 +14,8 @@ loader.setup
 
 before { loader.reload }
 
+set :port, ENV['PORT'] || 4567
+
 get '/' do
   response = UseCase::ViewSessions.new(
     session_gateway: Gateway::AirtableSessions.new
