@@ -22,3 +22,7 @@ get '/' do
   ).execute
   erb :index, locals: response
 end
+
+get %r{/v0/.*} do
+  AirtableSimulator.new.response
+end

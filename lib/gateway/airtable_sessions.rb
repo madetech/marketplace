@@ -5,7 +5,8 @@ require 'active_support/core_ext/numeric/time'
 
 class Gateway::AirtableSessions
   def all
-    response = get_as_json('https://api.airtable.com/' \
+    host = ENV['AIRTABLE_HOST'] || 'https://api.airtable.com/'
+    response = get_as_json(host + \
       "v0/#{ENV['AIRTABLE_TABLE']}/Marketplace" \
       "?maxRecords=100&view=#{ENV['AIRTABLE_ALL_VIEW']}")
 
@@ -48,12 +49,12 @@ class Gateway::AirtableSessions
     DateTime.parse(var).to_time.in_time_zone('Europe/London')
   end
 
-  def get_as_json(url)
-    url = URI.parse(url)
+  def get_as_json(url_as_string)
+    url = URI.parse(url_as_string)
     req = Net::HTTP::Get.new(url.to_s)
     req['Authorization'] = "Bearer #{ENV['AIRTABLE_KEY']}"
 
-    res = Net::HTTP.start(url.host, url.port, use_ssl: true) do |http|
+    res = Net::HTTP.start(url.host, url.port, use_ssl: url_as_string.start_with?('https://')) do |http|
       http.request(req)
     end
 

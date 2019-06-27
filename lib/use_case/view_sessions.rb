@@ -13,12 +13,11 @@ class UseCase::ViewSessions
       all_presentable_fields(session).each do |(key, value)|
         presentable_session[key] = value
       end
-      presentable_session
 
       presentable_sessions[session.date] ||= []
       presentable_sessions[session.date] << presentable_session
     end
-    puts presentable_sessions
+
     {
       sessions: presentable_sessions
     }
