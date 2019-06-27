@@ -41,8 +41,11 @@
       </div>
     </header>
     <main class="container mb-5">
-      <% sessions.each_with_index do |(key, sessions_on_day)| %>
-        <h2 class="mt-5"><%= Date.parse(key).strftime('%A %-d %B') %></h2>
+      <p>
+        <a class="float-right" href="https://airtable.com/invite/l?inviteId=invMZEgpg7pyh2KQ9&inviteToken=c691823ed9a8c0c32acda46ebdc4423db5cb0ebf0e000714950e818408143977">Add sessions here</a>
+      </p>
+      <% sessions.each_with_index do |(key, sessions_on_day), i| %>
+        <h2 <%= i != 0 ? 'class="mt-5"' : '' %>><%= Date.parse(key).strftime('%A %-d %B') %></h2>
         <div class="card-deck mb-3">
           <% sessions_on_day.each_with_index do |session, index| %>
             <div class="card">
@@ -51,7 +54,6 @@
                 <% session[:categories].each do |category| %>
                   <span class="badge badge-pill badge-primary"><%= category %></span>
                 <% end %>
-
               </div>
               <div class="card-body">
                 <h5 class="card-title"><%= session[:title] %></h5>
