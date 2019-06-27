@@ -62,8 +62,8 @@ describe 'the marketplace' do
             host: 'Craig',
             session_type: 'Seminar',
             location: '1st Floor Event Space',
-            start_time: '12:45',
-            end_time: '13:30'
+            start_time: '13:45',
+            end_time: '14:30'
           },
           {
             title: 'Another event',
@@ -71,8 +71,8 @@ describe 'the marketplace' do
             host: 'George',
             session_type: 'Workshop',
             location: 'Snowdon',
-            start_time: '13:00',
-            end_time: '14:00'
+            start_time: '14:00',
+            end_time: '15:00'
           }
         ]
       )

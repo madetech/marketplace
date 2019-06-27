@@ -53,8 +53,8 @@ describe Gateway::AirtableSessions do
       expect(session.title).to eq('From Protokanban to Kanban')
       expect(session.categories).to eq(%w[Lean Delivery])
       expect(session.host).to eq('Craig')
-      expect(session.start_time).to eq('12:45')
-      expect(session.end_time).to eq('13:30')
+      expect(session.start_time).to eq('13:45')
+      expect(session.end_time).to eq('14:30')
       expect(session.location).to eq('1st Floor Event Space')
       expect(session.session_type).to eq('Seminar')
     end
