@@ -71,7 +71,24 @@
               <div class="card-deck mb-3">
             <% end %>
           <% end %>
+        </div>
+        <% unless showcases[key].empty? %>
+        <h5>Showcases</h5>
+        <% end %>
+        <% showcases[key].each do |showcase| %>
+          <div class="card-deck showcases mb-1">
+            <div class="card">
+              <span class="time">
+                <%= showcase[:host] %> @ <%= showcase[:start_time] %>
+              </span>
+              <%= showcase[:title] %>. 
+              <span class="categories"><%= showcase[:categories].join(', ') %></span> 
+            </div>
           </div>
+        <% end %>
+        <% if showcases[key].empty? %>
+          <div class="nothing">No Showcases.<br />Maybe you could book one in?</div>
+        <% end %>
       <% end %>
     </main>
     <footer class="footer">

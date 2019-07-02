@@ -54,6 +54,57 @@ describe UseCase::ViewSessions do
       end
     end
 
+    context 'and some showcases' do
+      before do
+        sessions << a_session do
+          with_title('I am a showcase')
+          with_host('Craig')
+          with_categories(%w[Hello There])
+          with_session_type('Showcase')
+          with_location('Manchester')
+          with_start_time('16:30')
+          with_end_time('16:40')
+          with_date('2019-06-25')
+        end
+
+        sessions << a_session do
+          with_title('Another one')
+          with_host('Emma')
+          with_categories(%w[Hello There])
+          with_session_type('Showcase')
+          with_location('Manchester')
+          with_start_time('16:40')
+          with_end_time('16:50')
+          with_date('2019-06-25')
+        end
+      end
+
+      it 'only has 1 session on the 25th still' do
+        expect(response[:sessions]['2019-06-25'].length).to eq(1)
+      end
+
+      it 'can view the showcases' do
+        expect(response[:showcases]['2019-06-25'][0]).to eq(
+          title: 'I am a showcase',
+          host: 'Craig',
+          session_type: 'Showcase',
+          categories: %w[Hello There],
+          location: 'Manchester',
+          start_time: '16:30',
+          end_time: '16:40'
+        )
+        expect(response[:showcases]['2019-06-25'][1]).to eq(
+          title: 'Another one',
+          host: 'Emma',
+          session_type: 'Showcase',
+          categories: %w[Hello There],
+          location: 'Manchester',
+          start_time: '16:40',
+          end_time: '16:50'
+        )
+      end
+    end
+
     it 'can view the titles' do
       expect_first_session(:title).to eq('Hello?')
       expect_second_session(:title).to eq('Hello!')

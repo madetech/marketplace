@@ -38,6 +38,17 @@ describe 'the marketplace' do
               "Categories": %w[Something],
               "Session Type": 'Workshop'
             }
+          },
+          {
+            "fields": {
+              "Location": '1st Floor Event Space',
+              "Name": 'Great Showcase',
+              "Host": 'Jaseera',
+              "Time": '2019-06-29T15:30:00.000Z',
+              "Duration": 600,
+              "Categories": %w[Something],
+              "Session Type": 'Showcase'
+            }
           }
         ] }
   end
@@ -95,6 +106,26 @@ describe 'the marketplace' do
             location: 'Snowdon',
             start_time: '14:00',
             end_time: '15:00'
+          }
+        ]
+      )
+    )
+  end
+
+  it 'views the showcases' do
+    response = view_sessions.execute
+    expect(response[:showcases]).to(
+      eq(
+        '2019-06-28' => [],
+        '2019-06-29' => [
+          {
+            title: 'Great Showcase',
+            categories: %w[Something],
+            host: 'Jaseera',
+            session_type: 'Showcase',
+            location: '1st Floor Event Space',
+            start_time: '16:30',
+            end_time: '16:40'
           }
         ]
       )

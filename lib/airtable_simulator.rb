@@ -48,6 +48,21 @@ class AirtableSimulator
             "Session Type": 'Mobbing'
           },
           "createdTime": '2019-06-24T15:14:42.000Z'
+        },
+        {
+          "id": 'recQRPX1ZDyWPatOk',
+          "fields": {
+            "Location": '1st Floor Pairing Space',
+            "Name": 'This is a showcase!!',
+            "Host": 'Maysa',
+            "Time": '2019-06-22T15:30:00.000Z',
+            "Duration": 600,
+            "Categories": [
+              'Code'
+            ],
+            "Session Type": 'Showcase'
+          },
+          "createdTime": '2019-06-24T15:14:42.000Z'
         }
       ],
       "offset": 'recQRPX1ZDyWPatOk'
