@@ -26,13 +26,12 @@
         <nav class="p-0 flex-column flex-lg-row navbar navbar-expand">
           <div class="mr-lg-auto">
             <div class="header__logo">
-              <a href="#" class="header__logo_link">
-                <div class="header_logo_type--by">
-                  <span class="header_logo_type__text">Marketplace</span>
-                  <span class="px-3">by</span>
-                  <span class="position-relative" style="top: -2px;">
-                  <img alt="Made Tech" itemprop="logo" src="/assets/images/made-tech-logo-colour.png" width="120px">
-                </span>
+              <a href="/" class="header__logo_link">
+                <div class="header_logo_type">
+                  <div class="position-relative mr-3" style="top: -3px;">
+                    <img alt="Made Tech" itemprop="logo" src="/assets/images/made-tech-logo-colour.png" width="185px">
+                  </div>
+                  <span class="header_logo_type__text">Learning Marketplace</span>
                 </div>
               </a>
             </div>
@@ -40,40 +39,40 @@
         </nav>
       </div>
     </header>
-    <div class="jumbotron jumbotron-skinny">
-      <div></div>
-    </div>
     <main class="container mb-5">
       <p>
-        <a class="float-right" href="https://airtable.com/invite/l?inviteId=invMZEgpg7pyh2KQ9&inviteToken=c691823ed9a8c0c32acda46ebdc4423db5cb0ebf0e000714950e818408143977">Add sessions here</a>
+      <a href="https://airtable.com/invite/l?inviteId=invMZEgpg7pyh2KQ9&inviteToken=c691823ed9a8c0c32acda46ebdc4423db5cb0ebf0e000714950e818408143977">Add session</a>
       </p>
-      <% sessions.each_with_index do |(key, sessions_on_day), i| %>
-        <h2 <%= i != 0 ? 'class="mt-5"' : '' %>><%= Date.parse(key).strftime('%A %-d %B') %></h2>
-        <div class="card-deck mb-3">
-          <% sessions_on_day.each_with_index do |session, index| %>
-            <div class="card">
-              <div class="card-header">
-                <span class="badge badge-pill badge-success"><%= session[:session_type] %></span>
-                <% session[:categories].each do |category| %>
-                  <span class="badge badge-pill badge-primary"><%= category %></span>
-                <% end %>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><%= session[:title] %></h5>
-              </div>
-              <div class="card-footer text-muted">
-                <p class="card-text">Hosted by <%= session[:host] %>.</p>
-                <%= session[:location] %> <br/><%= session[:start_time] %> - <%= session[:end_time] %>
-              </div>
+    </main>
+    <% sessions.each_with_index do |(key, sessions_on_day), i| %>
+      <div class="day">
+      <main class="container">
+      <h2><span class="date-embellishment"></span><%= Date.parse(key).strftime('%A %-d %B') %></h2>
+      <div class="card-deck mb-3">
+        <% sessions_on_day.each_with_index do |session, index| %>
+          <div class="card">
+            <div class="card-header">
+              <span class="badge badge-pill badge-success"><%= session[:session_type] %></span>
+              <% session[:categories].each do |category| %>
+                <span class="badge badge-pill badge-primary"><%= category %></span>
+              <% end %>
             </div>
-            <% if (index + 1) % 2 == 0 %>
-              </div>
-              <div class="card-deck mb-3">
-            <% end %>
-          <% end %>
+            <div class="card-body">
+              <h5 class="card-title"><%= session[:title] %></h5>
+            </div>
+            <div class="card-footer text-muted">
+              <p class="card-text">Hosted by <%= session[:host] %>.</p>
+              <%= session[:location] %> <br/><%= session[:start_time] %> - <%= session[:end_time] %>
+            </div>
+          </div>
+          <% if (index + 1) % 2 == 0 %>
+        </div>
+        <div class="card-deck mb-3">
+        <% end %>
+      <% end %>
         </div>
         <% unless showcases[key].empty? %>
-        <h5>Showcases</h5>
+          <h5>Showcases</h5>
         <% end %>
         <% showcases[key].each do |showcase| %>
           <div class="card-deck showcases mb-1">
@@ -87,9 +86,17 @@
           </div>
         <% end %>
         <% if showcases[key].empty? %>
-          <div class="nothing">No Showcases.<br />Maybe you could book one in?</div>
+          </main>
+          <div class="nothing">
+            <main class="container">
+            <span>No Showcases.<br />Maybe you could book one in?</span>
+          </div>
+          <main class="container">
         <% end %>
+        </main>
+        </div>
       <% end %>
+
     </main>
     <footer class="footer">
       <div class="container">
@@ -97,8 +104,8 @@
           <div class="col-lg-4 d-none d-lg-block">
             © <span itemprop="copyrightYear">2019</span>
             <span itemprop="copyrightHolder" itemscope="" itemtype="http://schema.org/Organization">
-            <span itemprop="name">Made Tech Limited.</span>
-          </span>
+              <span itemprop="name">Made Tech Limited.</span>
+            </span>
           </div>
           <div class="col-7 col-lg-4 text-left text-lg-center">
             <a class="footer__logo" href="https://www.madetech.com" rel="home">
@@ -123,9 +130,9 @@
     </footer>
 
     <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-      crossorigin="anonymous"></script>
+                                                                      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                                                                      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+                                                                      crossorigin="anonymous"></script>
     <script src="/assets/js/madetech-frontend.js"></script>
   </body>
 </html>

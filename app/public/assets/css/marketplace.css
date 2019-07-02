@@ -30,28 +30,46 @@
     margin-right: -30px;
 }
 
+.date-embellishment {
+  border: 7px solid #222;
+  width: 0px;
+  display: block;
+  margin-left: 2px;
+  margin-bottom: 14px;
+  border-radius: 15px;
+}
+
+.day {
+  box-shadow: 0 -7px 8px -10px inset #222;
+  box-shadow: none;
+  padding-bottom: 50px;
+}
+
+.day:last-of-type {
+  box-shadow: none;
+}
+
 .nothing {
   margin-top: 50px;
-  margin-bottom: 100px;
-  text-align: center;
   font-size: 1.5em;
   text-decoration: underline;
   text-decoration-color: #53ce55;
   font-weight: 300;
 }
 
+.nothing span {
+  background-color: #222;
+  color: #fefefe;
+  padding-top: 0.2em;
+}
+
 .card {
     margin-right: 0 !important;
     margin-left: 0 !important;
-    padding: 0 15px;
-    border-left: 15px solid #53ce55;
+    padding: 0 25px;
+    border-left: 5px solid #53ce55;
     border-radius: 0;
     vertical-align: baseline;
-}
-
-.card:hover {
-    padding-left: 11px;
-    border-left: 19px solid #53ce55;
 }
 
 .showcases .card {
@@ -74,6 +92,10 @@
 }
 
 .jumbotron-skinny {
-    padding: 5px 0;
-    border-radius: 0;
+  padding: 5px 0;
+  border-radius: 0;
+}
+
+.footer {
+  margin-top: 50px;
 }
