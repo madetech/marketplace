@@ -45,7 +45,7 @@
       </p>
     </main>
     <% sessions.each_with_index do |(key, sessions_on_day), i| %>
-      <div class="day">
+      <div class="day <%= Date.parse(key).strftime('%A') != 'Friday' ? 'not-friday' : '' %>">
       <main class="container">
       <h2><span class="date-embellishment"></span><%= Date.parse(key).strftime('%A %-d %B') %></h2>
       <div class="card-deck mb-3">
@@ -87,8 +87,8 @@
         <% end %>
         <% if showcases[key].empty? %>
           </main>
+          <main class="container">
           <div class="nothing">
-            <main class="container">
             <span>No Showcases.<br />Maybe you could book one in?</span>
           </div>
           <main class="container">

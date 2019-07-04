@@ -75,7 +75,7 @@ class AirtableSimulator
             "Categories": [
               'Code'
             ],
-            "Session Type": 'Showcase'
+            "Session Type": 'Asd'
           },
           "createdTime": '2019-06-24T15:14:42.000Z'
         }
