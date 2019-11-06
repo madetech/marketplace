@@ -10,98 +10,41 @@
   </head>
 
   <body>
-    <div class="top_bar">
-      <div class="top_bar__inner">
-        <div class="container">
-          <div class="row d-md-flex justify-content-center justify-content-md-between">
-            <div class="d-none d-md-block">Improving software delivery in every organisation</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <header class="header">
-      <div class="header__inner">
-        <nav class="p-0 flex-column flex-lg-row navbar navbar-expand">
-          <div class="mr-lg-auto">
-            <div class="header__logo">
-              <a href="/" class="header__logo_link">
-                <div class="header_logo_type">
-                  <div class="position-relative mr-3" style="top: -3px;">
-                    <img alt="Made Tech" itemprop="logo" src="/assets/images/made-tech-logo-colour.png" width="185px">
+    <main class="page-width">
+      <div class="container-fluid">
+        <img alt="Made Tech" class="float-right mt-3" itemprop="logo" src="/assets/images/made-tech-logo-colour.png" width="256px">
+        <% sessions.each_with_index do |(month, sessions_for_week)| %>
+          <h1 class="month mt-2"><%= month %></h1>
+          <a href="https://airtable.com/invite/l?inviteId=invMZEgpg7pyh2KQ9&inviteToken=c691823ed9a8c0c32acda46ebdc4423db5cb0ebf0e000714950e818408143977">Add session</a>
+          <div class="row">
+            <% sessions_for_week.each_with_index do |(key, sessions_on_day)| %>
+              <div class="col-sm week">
+                <h2 class="title"><%= Date.parse(key).strftime('%-d').to_i.ordinalize %></h2>
+                <% sessions_on_day.each_with_index do |session| %>
+                  <div class="mb-5">
+                    <h5 class="session-title center"><%= session[:title] %><br />(<%= session[:start_time] %> - <%= session[:end_time] %>)</h5>
+                    <div class="center mb-2">
+                      <span class="badge badge-pill badge-success"><%= session[:session_type] %></span>
+                      <% session[:categories].each do |department| %>
+                        <span class="badge badge-pill badge-primary"><%= department %></span>
+                      <% end %>
+                    </div>
+                    <div></div>
+                    <div class="center">
+                      <img class="face" src="https://www.gravatar.com/avatar/<%= Digest::MD5.hexdigest(session[:host].downcase+"@madetech.com") %>" />
+                      <%= session[:host] %> in <%= session[:location] %></div>
                   </div>
-                  <span class="header_logo_type__text">Learning Marketplace</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <main class="container mb-5">
-      <p>
-      <a href="https://airtable.com/invite/l?inviteId=invMZEgpg7pyh2KQ9&inviteToken=c691823ed9a8c0c32acda46ebdc4423db5cb0ebf0e000714950e818408143977">Add session</a>
-      </p>
-    </main>
-    <% sessions.each_with_index do |(key, sessions_on_day), i| %>
-      <div class="day <%= Date.parse(key).strftime('%A') != 'Friday' ? 'not-friday' : '' %>">
-      <main class="container">
-      <h2><span class="date-embellishment"></span><%= Date.parse(key).strftime('%A %-d %B') %></h2>
-      <div class="card-deck mb-3">
-        <% sessions_on_day.each_with_index do |session, index| %>
-          <div class="card">
-            <div class="card-header">
-              <span class="badge badge-pill badge-success"><%= session[:session_type] %></span>
-              <% session[:categories].each do |category| %>
-                <span class="badge badge-pill badge-primary"><%= category %></span>
-              <% end %>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title"><%= session[:title] %></h5>
-            </div>
-            <div class="card-footer text-muted">
-              <p class="card-text">Hosted by <%= session[:host] %>.</p>
-              <%= session[:location] %> <br/><%= session[:start_time] %> - <%= session[:end_time] %>
-            </div>
-          </div>
-          <% if (index + 1) % 2 == 0 %>
+                <% end %>
+                <% showcases[key].each do |showcase| %>
+                  <div class="center showcases">
+                    <%= showcase[:title] %><br />
+                    <%= showcase[:host] %> @ <%= showcase[:start_time] %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
         </div>
-        <div class="card-deck mb-3">
-        <% end %>
-      <% end %>
-        </div>
-        <% unless showcases[key].empty? %>
-          <h5>Showcases</h5>
-        <% end %>
-        <% showcases[key].each do |showcase| %>
-          <div class="card-deck showcases mb-1">
-            <div class="card">
-              <span class="time">
-                <%= showcase[:host] %> @ <%= showcase[:start_time] %>
-              </span>
-              <%= showcase[:title] %>. 
-              <span class="categories"><%= showcase[:categories].join(', ') %></span> 
-            </div>
-          </div>
-        <% end %>
-        <% if showcases[key].empty? %>
-          </main>
-          <main class="container">
-          <div class="nothing">
-            <span>No Showcases.<br />Maybe you could book one in?</span>
-          </div>
-          <main class="container">
-        <% end %>
-        </main>
-        </div>
-      <% end %>
-
-    </main>
-    <main class="container mt-5">
-      <h1>Tweets...</h1>
-      <div class="tweets">
-        <a class="twitter-timeline" data-theme="light" href="https://twitter.com/rorymacdonald/lists/made-tech-superstars?ref_src=twsrc%5Etfw">A Twitter List by rorymacdonald</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </div>
     </main>
     <footer class="footer">

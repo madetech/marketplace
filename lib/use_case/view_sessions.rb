@@ -10,6 +10,7 @@ class UseCase::ViewSessions
 
     @session_gateway.all.each do |session|
       response_builder.date(session.date)
+      response_builder.month(session.month)
 
       if showcase?(session)
         response_builder.showcase to_presentable(session)
@@ -28,6 +29,7 @@ class UseCase::ViewSessions
       @presentable_sessions = {}
       @presentable_showcases = {}
       @last_date = nil
+      @last_month = nil
     end
 
     def build
@@ -37,10 +39,15 @@ class UseCase::ViewSessions
       }
     end
 
-    def date(date)
-      @presentable_sessions[date] ||= []
-      @presentable_showcases[date] ||= []
-      @last_date = date
+    def date(d)
+      @presentable_showcases[d] ||= []
+      @last_date = d
+    end
+
+    def month(m)
+      @presentable_sessions[m] ||= {}
+      @presentable_sessions[m][@last_date] ||= []
+      @last_month = m
     end
 
     def showcase(showcase)
@@ -48,7 +55,7 @@ class UseCase::ViewSessions
     end
 
     def session(session)
-      @presentable_sessions[@last_date] << session
+      @presentable_sessions[@last_month][@last_date] << session
     end
   end
 

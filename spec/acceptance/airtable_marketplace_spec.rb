@@ -49,6 +49,17 @@ describe 'the marketplace' do
               "Categories": %w[Something],
               "Session Type": 'Showcase'
             }
+          },
+          {
+            "fields": {
+              "Location": 'Kilimanjaro',
+              "Name": 'Tech Stuff',
+              "Host": 'Luke',
+              "Time": '2019-07-29T15:30:00.000Z',
+              "Duration": 600,
+              "Categories": %w[Technology],
+              "Session Type": 'Key Session'
+            }
           }
         ] }
   end
@@ -77,37 +88,52 @@ describe 'the marketplace' do
     response = view_sessions.execute
     expect(response[:sessions]).to(
       eq(
-        '2019-06-28' => [
-          {
-            title: 'From Protokanban to Kanban',
-            categories: %w[Lean Delivery],
-            host: 'Craig',
-            session_type: 'Seminar',
-            location: '1st Floor Event Space',
-            start_time: '13:45',
-            end_time: '14:30'
-          },
-          {
-            title: 'From Protokanban to Kanban',
-            categories: %w[Lean Delivery],
-            host: 'Craig',
-            session_type: 'Seminar',
-            location: '1st Floor Event Space',
-            start_time: '13:45',
-            end_time: '14:30'
-          }
-        ],
-        '2019-06-29' => [
-          {
-            title: 'Another event',
-            categories: %w[Something],
-            host: 'George',
-            session_type: 'Workshop',
-            location: 'Snowdon',
-            start_time: '14:00',
-            end_time: '15:00'
-          }
-        ]
+        'June' => {
+          '2019-06-28' => [
+            {
+              title: 'From Protokanban to Kanban',
+              categories: %w[Lean Delivery],
+              host: 'Craig',
+              session_type: 'Seminar',
+              location: '1st Floor Event Space',
+              start_time: '13:45',
+              end_time: '14:30'
+            },
+            {
+              title: 'From Protokanban to Kanban',
+              categories: %w[Lean Delivery],
+              host: 'Craig',
+              session_type: 'Seminar',
+              location: '1st Floor Event Space',
+              start_time: '13:45',
+              end_time: '14:30'
+            }
+          ],
+          '2019-06-29' => [
+            {
+              title: 'Another event',
+              categories: %w[Something],
+              host: 'George',
+              session_type: 'Workshop',
+              location: 'Snowdon',
+              start_time: '14:00',
+              end_time: '15:00'
+            }
+          ]
+        },
+        'July' => {
+          '2019-07-29' => [
+            {
+              title: 'Tech Stuff',
+              categories: %w[Technology],
+              location: 'Kilimanjaro',
+              host: 'Luke',
+              session_type: 'Key Session',
+              start_time: '16:30',
+              end_time: '16:40'
+            }
+          ]
+        }
       )
     )
   end
@@ -116,6 +142,7 @@ describe 'the marketplace' do
     response = view_sessions.execute
     expect(response[:showcases]).to(
       eq(
+        '2019-07-29' => [],
         '2019-06-28' => [],
         '2019-06-29' => [
           {

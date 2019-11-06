@@ -12,11 +12,11 @@ describe UseCase::ViewSessions do
   end
 
   def expect_first_session(field)
-    expect(response.dig(:sessions, '2019-06-29', 0, field))
+    expect(response.dig(:sessions, 'July', '2019-07-29', 0, field))
   end
 
   def expect_second_session(field)
-    expect(response.dig(:sessions, '2019-06-25', 0, field))
+    expect(response.dig(:sessions, 'June', '2019-06-25', 0, field))
   end
 
   def a_session(&block)
@@ -40,7 +40,7 @@ describe UseCase::ViewSessions do
         with_location('London')
         with_start_time('14:00')
         with_end_time('17:00')
-        with_date('2019-06-29')
+        with_date('2019-07-29')
       end
 
       sessions << a_session do
@@ -80,7 +80,7 @@ describe UseCase::ViewSessions do
       end
 
       it 'only has 1 session on the 25th still' do
-        expect(response[:sessions]['2019-06-25'].length).to eq(1)
+        expect(response[:sessions]['June']['2019-06-25'].length).to eq(1)
       end
 
       it 'can view the showcases' do

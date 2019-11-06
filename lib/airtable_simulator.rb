@@ -30,7 +30,7 @@ class AirtableSimulator
             "Time": '2020-01-03T12:30:00.000Z',
             "Duration": 10_800,
             "Learning Outcomes": [
-              'Roles & Responsibilities',
+              'Roles & Responsibilities'
             ],
             "Categories": ['People'],
             "Session Type": 'Key Session'
@@ -47,7 +47,7 @@ class AirtableSimulator
             "Duration": 10_800,
             "Learning Outcomes": [
               'DOS Bids',
-              'Proposals',
+              'Proposals'
             ],
             "Categories": ['People'],
             "Session Type": 'Key Session'
@@ -62,9 +62,9 @@ class AirtableSimulator
             "Host": 'Yas',
             "Time": '2020-01-03T12:30:00.000Z',
             "Duration": 10_800,
-            "Learning Outcomes": [
-              'Vision',
-              'Goals',
+            "Learning Outcomes": %w[
+              Vision
+              Goals
             ],
             "Categories": ['People'],
             "Session Type": 'Key Session'
@@ -79,9 +79,9 @@ class AirtableSimulator
             "Host": 'Yas',
             "Time": '2020-01-03T12:30:00.000Z',
             "Duration": 10_800,
-            "Learning Outcomes": [
-              'Vision',
-              'Goals',
+            "Learning Outcomes": %w[
+              Vision
+              Goals
             ],
             "Categories": ['Showcase'],
             "Session Type": 'Showcase'
@@ -114,7 +114,7 @@ class AirtableSimulator
             "Time": '2020-01-10T12:30:00.000Z',
             "Duration": 10_800,
             "Learning Outcomes": [
-              'Roles & Responsibilities',
+              'Roles & Responsibilities'
             ],
             "Categories": ['People'],
             "Session Type": 'Key Session'
@@ -131,7 +131,7 @@ class AirtableSimulator
             "Duration": 10_800,
             "Learning Outcomes": [
               'DOS Bids',
-              'Proposals',
+              'Proposals'
             ],
             "Categories": ['People'],
             "Session Type": 'Key Session'
@@ -146,9 +146,9 @@ class AirtableSimulator
             "Host": 'Yas',
             "Time": '2020-01-10T12:30:00.000Z',
             "Duration": 10_800,
-            "Learning Outcomes": [
-              'Vision',
-              'Goals',
+            "Learning Outcomes": %w[
+              Vision
+              Goals
             ],
             "Categories": ['People'],
             "Session Type": 'Key Session'
@@ -181,7 +181,7 @@ class AirtableSimulator
             "Time": '2020-01-17T12:30:00.000Z',
             "Duration": 10_800,
             "Learning Outcomes": [
-              'Roles & Responsibilities',
+              'Roles & Responsibilities'
             ],
             "Categories": ['People'],
             "Session Type": 'Key Session'
@@ -198,7 +198,7 @@ class AirtableSimulator
             "Duration": 10_800,
             "Learning Outcomes": [
               'DOS Bids',
-              'Proposals',
+              'Proposals'
             ],
             "Categories": ['People'],
             "Session Type": 'Key Session'
@@ -213,9 +213,9 @@ class AirtableSimulator
             "Host": 'Yas',
             "Time": '2020-01-17T12:30:00.000Z',
             "Duration": 10_800,
-            "Learning Outcomes": [
-              'Vision',
-              'Goals',
+            "Learning Outcomes": %w[
+              Vision
+              Goals
             ],
             "Categories": ['People'],
             "Session Type": 'Key Session'
@@ -248,7 +248,7 @@ class AirtableSimulator
             "Time": '2020-01-24T12:30:00.000Z',
             "Duration": 10_800,
             "Learning Outcomes": [
-              'Roles & Responsibilities',
+              'Roles & Responsibilities'
             ],
             "Categories": ['People'],
             "Session Type": 'Key Session'
@@ -265,7 +265,7 @@ class AirtableSimulator
             "Duration": 10_800,
             "Learning Outcomes": [
               'DOS Bids',
-              'Proposals',
+              'Proposals'
             ],
             "Categories": ['People'],
             "Session Type": 'Key Session'
@@ -280,9 +280,9 @@ class AirtableSimulator
             "Host": 'Yas',
             "Time": '2020-01-24T12:30:00.000Z',
             "Duration": 10_800,
-            "Learning Outcomes": [
-              'Vision',
-              'Goals',
+            "Learning Outcomes": %w[
+              Vision
+              Goals
             ],
             "Categories": ['People'],
             "Session Type": 'Key Session'
@@ -315,7 +315,7 @@ class AirtableSimulator
             "Time": '2020-01-31T12:30:00.000Z',
             "Duration": 10_800,
             "Learning Outcomes": [
-              'Roles & Responsibilities',
+              'Roles & Responsibilities'
             ],
             "Categories": ['People'],
             "Session Type": 'Key Session'
@@ -332,7 +332,7 @@ class AirtableSimulator
             "Duration": 10_800,
             "Learning Outcomes": [
               'DOS Bids',
-              'Proposals',
+              'Proposals'
             ],
             "Categories": ['People'],
             "Session Type": 'Key Session'
@@ -347,15 +347,15 @@ class AirtableSimulator
             "Host": 'Yas',
             "Time": '2020-01-31T12:30:00.000Z',
             "Duration": 10_800,
-            "Learning Outcomes": [
-              'Vision',
-              'Goals',
+            "Learning Outcomes": %w[
+              Vision
+              Goals
             ],
             "Categories": ['People'],
             "Session Type": 'Key Session'
           },
           "createdTime": '2019-06-24T15:13:11.000Z'
-        },
+        }
       ],
       "offset": 'recQRPX1ZDyWPatOk'
     }.to_json

@@ -20,4 +20,8 @@ class Domain::Session
   def fields
     VISIBLE_FIELDS + [:date]
   end
+
+  def month
+    Date.parse(date).strftime('%B')
+  end
 end
