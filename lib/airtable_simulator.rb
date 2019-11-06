@@ -71,7 +71,23 @@ class AirtableSimulator
           },
           "createdTime": '2019-06-24T15:13:11.000Z'
         },
-
+        {
+          "id": 'recg5IIoqQfQc8D0d',
+          "fields": {
+            "Location": 'Ben Nevis',
+            "Name": 'Learn Tech Relaunch',
+            "Host": 'Yas',
+            "Time": '2020-01-03T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'Vision',
+              'Goals',
+            ],
+            "Categories": ['Showcase'],
+            "Session Type": 'Showcase'
+          },
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
         {
           "id": 'recg5IIoqQfQc8D0d',
           "fields": {
