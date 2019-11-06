@@ -7,78 +7,339 @@ class AirtableSimulator
         {
           "id": 'recg5IIoqQfQc8D0d',
           "fields": {
-            "Location": '2nd Floor',
-            "Name": '?',
-            "Host": 'Chris',
-            "Time": '2019-06-21T12:30:00.000Z',
+            "Location": 'Everest',
+            "Name": 'Building Apps',
+            "Host": 'Luke',
+            "Time": '2020-01-03T12:30:00.000Z',
             "Duration": 10_800,
-            "Categories": [
-              'Code'
+            "Learning Outcomes": [
+              'How to build apps for users',
+              'User research principles'
             ],
-            "Session Type": 'Mobbing'
+            "Categories": ['Technology'],
+            "Session Type": 'Key Session'
           },
           "createdTime": '2019-06-24T15:13:11.000Z'
         },
         {
-          "id": 'rechEB6htlziD9stw',
+          "id": 'recg5IIoqQfQc8D0d',
           "fields": {
-            "Location": 'Kitchen',
-            "Name": 'Training Videos',
-            "Host": 'Craig',
-            "Time": '2019-06-21T13:00:00.000Z',
-            "Duration": 9000,
-            "Categories": [
-              'Code'
+            "Location": 'Kilimanjaro',
+            "Name": 'Account Leadership',
+            "Host": 'Rory',
+            "Time": '2020-01-03T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'Roles & Responsibilities',
             ],
-            "Session Type": 'Filming'
+            "Categories": ['People'],
+            "Session Type": 'Key Session'
           },
-          "createdTime": '2019-06-24T15:14:01.000Z'
+          "createdTime": '2019-06-24T15:13:11.000Z'
         },
         {
-          "id": 'recQRPX1ZDyWPatOk',
+          "id": 'recg5IIoqQfQc8D0d',
           "fields": {
-            "Location": '1st Floor Pairing Space',
-            "Name": 'Test Doubles - How do true mocks?',
-            "Host": 'Ting',
-            "Time": '2019-06-22T13:00:00.000Z',
-            "Duration": 9000,
-            "Categories": [
-              'Code'
+            "Location": 'Snowdon',
+            "Name": 'Bid Writing',
+            "Host": 'Ian S.',
+            "Time": '2020-01-03T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'DOS Bids',
+              'Proposals',
             ],
-            "Session Type": 'Mobbing'
+            "Categories": ['People'],
+            "Session Type": 'Key Session'
           },
-          "createdTime": '2019-06-24T15:14:42.000Z'
+          "createdTime": '2019-06-24T15:13:11.000Z'
         },
         {
-          "id": 'recQRPX1ZDyWPatOk',
+          "id": 'recg5IIoqQfQc8D0d',
           "fields": {
-            "Location": '1st Floor Pairing Space',
-            "Name": 'This is a showcase!!',
-            "Host": 'Maysa',
-            "Time": '2019-06-22T15:30:00.000Z',
-            "Duration": 600,
-            "Categories": [
-              'Code'
+            "Location": 'Ben Nevis',
+            "Name": 'Learn Tech Relaunch',
+            "Host": 'Yas',
+            "Time": '2020-01-03T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'Vision',
+              'Goals',
             ],
-            "Session Type": 'Showcase'
+            "Categories": ['People'],
+            "Session Type": 'Key Session'
           },
-          "createdTime": '2019-06-24T15:14:42.000Z'
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
+
+        {
+          "id": 'recg5IIoqQfQc8D0d',
+          "fields": {
+            "Location": 'Everest',
+            "Name": 'Building Apps',
+            "Host": 'Luke',
+            "Time": '2020-01-10T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'How to build apps for users',
+              'User research principles'
+            ],
+            "Categories": ['Technology'],
+            "Session Type": 'Key Session'
+          },
+          "createdTime": '2019-06-24T15:13:11.000Z'
         },
         {
-          "id": 'recQRPX1ZDyWPatOk',
+          "id": 'recg5IIoqQfQc8D0d',
           "fields": {
-            "Location": '1st Floor Pairing Space',
-            "Name": 'This is a showcase!!',
-            "Host": 'Maysa',
-            "Time": '2019-06-30T15:30:00.000Z',
-            "Duration": 600,
-            "Categories": [
-              'Code'
+            "Location": 'Kilimanjaro',
+            "Name": 'Account Leadership',
+            "Host": 'Rory',
+            "Time": '2020-01-10T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'Roles & Responsibilities',
             ],
-            "Session Type": 'Asd'
+            "Categories": ['People'],
+            "Session Type": 'Key Session'
           },
-          "createdTime": '2019-06-24T15:14:42.000Z'
-        }
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
+        {
+          "id": 'recg5IIoqQfQc8D0d',
+          "fields": {
+            "Location": 'Snowdon',
+            "Name": 'Bid Writing',
+            "Host": 'Ian S.',
+            "Time": '2020-01-10T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'DOS Bids',
+              'Proposals',
+            ],
+            "Categories": ['People'],
+            "Session Type": 'Key Session'
+          },
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
+        {
+          "id": 'recg5IIoqQfQc8D0d',
+          "fields": {
+            "Location": 'Ben Nevis',
+            "Name": 'Learn Tech Relaunch',
+            "Host": 'Yas',
+            "Time": '2020-01-10T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'Vision',
+              'Goals',
+            ],
+            "Categories": ['People'],
+            "Session Type": 'Key Session'
+          },
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
+        {
+          "id": 'recg5IIoqQfQc8D0d',
+          "fields": {
+            "Location": 'Everest',
+            "Name": 'Building Apps',
+            "Host": 'Luke',
+            "Time": '2020-01-17T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'How to build apps for users',
+              'User research principles'
+            ],
+            "Categories": ['Technology'],
+            "Session Type": 'Key Session'
+          },
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
+        {
+          "id": 'recg5IIoqQfQc8D0d',
+          "fields": {
+            "Location": 'Kilimanjaro',
+            "Name": 'Account Leadership',
+            "Host": 'Rory',
+            "Time": '2020-01-17T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'Roles & Responsibilities',
+            ],
+            "Categories": ['People'],
+            "Session Type": 'Key Session'
+          },
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
+        {
+          "id": 'recg5IIoqQfQc8D0d',
+          "fields": {
+            "Location": 'Snowdon',
+            "Name": 'Bid Writing',
+            "Host": 'Ian S.',
+            "Time": '2020-01-17T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'DOS Bids',
+              'Proposals',
+            ],
+            "Categories": ['People'],
+            "Session Type": 'Key Session'
+          },
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
+        {
+          "id": 'recg5IIoqQfQc8D0d',
+          "fields": {
+            "Location": 'Ben Nevis',
+            "Name": 'Learn Tech Relaunch',
+            "Host": 'Yas',
+            "Time": '2020-01-17T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'Vision',
+              'Goals',
+            ],
+            "Categories": ['People'],
+            "Session Type": 'Key Session'
+          },
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
+        {
+          "id": 'recg5IIoqQfQc8D0d',
+          "fields": {
+            "Location": 'Everest',
+            "Name": 'Building Apps',
+            "Host": 'Luke',
+            "Time": '2020-01-24T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'How to build apps for users',
+              'User research principles'
+            ],
+            "Categories": ['Technology'],
+            "Session Type": 'Key Session'
+          },
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
+        {
+          "id": 'recg5IIoqQfQc8D0d',
+          "fields": {
+            "Location": 'Kilimanjaro',
+            "Name": 'Account Leadership',
+            "Host": 'Rory',
+            "Time": '2020-01-24T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'Roles & Responsibilities',
+            ],
+            "Categories": ['People'],
+            "Session Type": 'Key Session'
+          },
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
+        {
+          "id": 'recg5IIoqQfQc8D0d',
+          "fields": {
+            "Location": 'Snowdon',
+            "Name": 'Bid Writing',
+            "Host": 'Ian S.',
+            "Time": '2020-01-24T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'DOS Bids',
+              'Proposals',
+            ],
+            "Categories": ['People'],
+            "Session Type": 'Key Session'
+          },
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
+        {
+          "id": 'recg5IIoqQfQc8D0d',
+          "fields": {
+            "Location": 'Ben Nevis',
+            "Name": 'Learn Tech Relaunch',
+            "Host": 'Yas',
+            "Time": '2020-01-24T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'Vision',
+              'Goals',
+            ],
+            "Categories": ['People'],
+            "Session Type": 'Key Session'
+          },
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
+        {
+          "id": 'recg5IIoqQfQc8D0d',
+          "fields": {
+            "Location": 'Everest',
+            "Name": 'Building Apps',
+            "Host": 'Luke',
+            "Time": '2020-01-31T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'How to build apps for users',
+              'User research principles'
+            ],
+            "Categories": ['Technology'],
+            "Session Type": 'Key Session'
+          },
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
+        {
+          "id": 'recg5IIoqQfQc8D0d',
+          "fields": {
+            "Location": 'Kilimanjaro',
+            "Name": 'Account Leadership',
+            "Host": 'Rory',
+            "Time": '2020-01-31T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'Roles & Responsibilities',
+            ],
+            "Categories": ['People'],
+            "Session Type": 'Key Session'
+          },
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
+        {
+          "id": 'recg5IIoqQfQc8D0d',
+          "fields": {
+            "Location": 'Snowdon',
+            "Name": 'Bid Writing',
+            "Host": 'Ian S.',
+            "Time": '2020-01-31T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'DOS Bids',
+              'Proposals',
+            ],
+            "Categories": ['People'],
+            "Session Type": 'Key Session'
+          },
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
+        {
+          "id": 'recg5IIoqQfQc8D0d',
+          "fields": {
+            "Location": 'Ben Nevis',
+            "Name": 'Learn Tech Relaunch',
+            "Host": 'Yas',
+            "Time": '2020-01-31T12:30:00.000Z',
+            "Duration": 10_800,
+            "Learning Outcomes": [
+              'Vision',
+              'Goals',
+            ],
+            "Categories": ['People'],
+            "Session Type": 'Key Session'
+          },
+          "createdTime": '2019-06-24T15:13:11.000Z'
+        },
       ],
       "offset": 'recQRPX1ZDyWPatOk'
     }.to_json
