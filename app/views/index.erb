@@ -14,26 +14,29 @@
     <main class="page-width">
       <div class="container-fluid">
         <img alt="Made Tech" class="float-right mt-3" itemprop="logo" src="/assets/images/made-tech-logo-colour.png" width="256px">
+        <a href="https://airtable.com/invite/l?inviteId=invMZEgpg7pyh2KQ9&inviteToken=c691823ed9a8c0c32acda46ebdc4423db5cb0ebf0e000714950e818408143977">Add session</a>
         <% sessions.each_with_index do |(month, sessions_for_week)| %>
-          <h1 class="month mt-2"><%= month %></h1>
-          <a href="https://airtable.com/invite/l?inviteId=invMZEgpg7pyh2KQ9&inviteToken=c691823ed9a8c0c32acda46ebdc4423db5cb0ebf0e000714950e818408143977">Add session</a>
+          <div class="row">
+            <h1 class="month mt-2"><%= month %></h1>
+          </div>
           <div class="row">
             <% sessions_for_week.each_with_index do |(key, sessions_on_day)| %>
               <div class="col-sm week">
                 <h2 class="title"><%= Date.parse(key).strftime('%-d').to_i.ordinalize %></h2>
                 <% sessions_on_day.each_with_index do |session| %>
-                  <div class="mb-5">
-                    <h5 class="session-title center"><%= session[:title] %><br />(<%= session[:start_time] %> - <%= session[:end_time] %>)</h5>
-                    <div class="center mb-2">
+                  <div class="session">
+                    <h5 class="session-title"><%= session[:title] %><br />(<%= session[:start_time] %> - <%= session[:end_time] %>)</h5>
+                    <div class="mb-2">
                       <span class="badge badge-pill badge-success"><%= session[:session_type] %></span>
                       <% session[:categories].each do |department| %>
                         <span class="badge badge-pill badge-primary"><%= department %></span>
                       <% end %>
                     </div>
                     <div></div>
-                    <div class="center">
+                    <div >
                       <img class="face" src="https://www.gravatar.com/avatar/<%= Digest::MD5.hexdigest(session[:host].downcase+"@madetech.com") %>" />
-                      <%= session[:host] %> in <%= session[:location] %></div>
+                      <%= session[:host] %> in <%= session[:location] %>
+                    </div>
                   </div>
                 <% end %>
                 <% showcases[key].each do |showcase| %>
@@ -44,8 +47,9 @@
                 <% end %>
               </div>
             <% end %>
-          <% end %>
         </div>
+
+        <% end %> <!-- asd -->
       </div>
     </main>
     <footer class="footer">
