@@ -11,10 +11,28 @@
   </head>
 
   <body>
+    <header class="header">
+      <div class="header__inner">
+        <nav class="p-0 flex-column flex-lg-row navbar navbar-expand">
+          <div class="mr-lg-auto">
+            <div class="header__logo">
+              <a href="/" class="header__logo_link">
+                <img alt="Made Tech" itemprop="logo" src="/assets/images/made-tech-logo-colour.png" width="200px">
+              </a>
+            </div>
+          </div>
+          <div class="header_nav constrain-link-width scrollable">
+            <div class="header_nav__inner">
+              <nav class="navbar-nav align-items-center">
+                <a href="https://airtable.com/invite/l?inviteId=invMZEgpg7pyh2KQ9&inviteToken=c691823ed9a8c0c32acda46ebdc4423db5cb0ebf0e000714950e818408143977">Add session</a>
+              </nav>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
     <main class="page-width">
       <div class="container-fluid">
-        <img alt="Made Tech" class="float-right mt-3" itemprop="logo" src="/assets/images/made-tech-logo-colour.png" width="256px">
-        <a href="https://airtable.com/invite/l?inviteId=invMZEgpg7pyh2KQ9&inviteToken=c691823ed9a8c0c32acda46ebdc4423db5cb0ebf0e000714950e818408143977">Add session</a>
         <% sessions.each_with_index do |(month, sessions_for_week)| %>
           <div class="row">
             <h1 class="month mt-2"><%= month %></h1>
