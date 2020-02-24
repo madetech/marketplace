@@ -11,10 +11,30 @@
   </head>
 
   <body>
+    <header class="header">
+      <div class="header__inner">
+        <nav class="p-0 flex-column flex-lg-row navbar navbar-expand">
+          <div class="mr-lg-auto">
+            <div class="header__logo">
+              <a href="/" class="header__logo_link">
+                <img alt="Made Tech" itemprop="logo" src="/assets/images/made-tech-logo-colour.png" width="200px">
+              </a>
+            </div>
+          </div>
+          <div class="header_nav constrain-link-width scrollable">
+            <div class="header_nav__inner">
+              <nav class="navbar-nav align-items-center">
+                <a href="https://airtable.com/invite/l?inviteId=invMZEgpg7pyh2KQ9&inviteToken=c691823ed9a8c0c32acda46ebdc4423db5cb0ebf0e000714950e818408143977" target="_blank">
+                  Add workshop or showcase
+                </a>
+              </nav>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
     <main class="page-width">
       <div class="container-fluid">
-        <img alt="Made Tech" class="float-right mt-3" itemprop="logo" src="/assets/images/made-tech-logo-colour.png" width="256px">
-        <a href="https://airtable.com/invite/l?inviteId=invMZEgpg7pyh2KQ9&inviteToken=c691823ed9a8c0c32acda46ebdc4423db5cb0ebf0e000714950e818408143977">Add session</a>
         <% sessions.each_with_index do |(month, sessions_for_week)| %>
           <div class="row">
             <h1 class="month mt-2"><%= month %></h1>
@@ -47,34 +67,25 @@
                 <% end %>
               </div>
             <% end %>
-        </div>
-
-        <% end %> <!-- asd -->
+          </div>
+        <% end %>
       </div>
     </main>
     <footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 d-none d-lg-block">
-            © <span itemprop="copyrightYear">2019</span>
-            <span itemprop="copyrightHolder" itemscope="" itemtype="http://schema.org/Organization">
-              <span itemprop="name">Made Tech Limited.</span>
-            </span>
+          <div class="col-12 text-center col-sm-6 text-sm-left d-sm-block footer__copyright_notice">
+            © <span itemprop="copyrightHolder" itemscope itemtype="http://schema.org/Organization"><span itemprop="name">Made Tech</span></span> <span itemprop="copyrightYear">2020</span>
+            <span> | </span>
+            <a href="https://www.madetech.com/privacy">Privacy Policy</a>
           </div>
-          <div class="col-7 col-lg-4 text-left text-lg-center">
-            <a class="footer__logo" href="https://www.madetech.com" rel="home">
-              <img src="/assets/images/made-tech-logo-wht.png" height="25" alt="Made Tech">
-            </a>
-          </div>
-          <nav class="col-5 col-lg-4 text-right">
+          <nav class="col-12 text-center col-sm-6 text-sm-right footer__social_wrapper">
             <a class="footer__social_link" href="https://www.madetech.com/ext/linkedin">
               <img src="/assets/images/icons/linkedin.svg" alt="LinkedIn" height="25"/>
             </a>
-
             <a class="footer__social_link" href="https://www.madetech.com/ext/twitter">
               <img src="/assets/images/icons/twitter.svg" alt="Twitter" height="25"/>
             </a>
-
             <a class="footer__social_link" href="https://www.madetech.com/ext/github">
               <img src="/assets/images/icons/github.svg" alt="GitHub" height="25"/>
             </a>
@@ -82,11 +93,10 @@
         </div>
       </div>
     </footer>
-
     <script
-                                                                      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                                                                      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-                                                                      crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+      crossorigin="anonymous"></script>
     <script src="/assets/js/madetech-frontend.js"></script>
   </body>
 </html>
